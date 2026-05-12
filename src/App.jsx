@@ -2,17 +2,19 @@ import { useState } from 'react'
 import './App.css'
 
 
- function App() {
+function App() {
   return (
     <div className='app'>
-      <div className='menu'>
-      <h1>Меню</h1>
-      <input type="text" placeholder='Поиск'/>
-      </div>
+      
+      <div className='left-side'>
+        <div className='menu'>
+          <h1>Меню</h1>
+          <input type="text" placeholder='Поиск' />
+        </div>
 
-      <div className='header'>
-        <h3 className='title'>Задачи</h3>
-       </div>
+        <div className='header'>
+          <h3 className='title'>Задачи</h3>
+        </div>
 
         <div className='category-list'>
           <span className="icon">»</span>
@@ -24,10 +26,8 @@ import './App.css'
           <span>Сегодня</span>
         </div>
 
-      
-
-      <div className='categories-section'>
-        <h3 className="section-title">Категории</h3>
+        <div className='categories-section'>
+          <h3 className="section-title">Категории</h3>
         </div>
 
         <div className='category-work'>
@@ -49,19 +49,16 @@ import './App.css'
           <span className='icon'>⊕</span>
           <span>Добавить категорию</span>
         </div>
-        
-
-         
-
-
-
       </div>
+
       
-       
-      
-   
-   
+      <div className='right-side'>
+        <div className='message'>Задач пока нет</div>
+      </div>
+    </div>
   );
 }
 
-export default App;            
+export default App;
+
+          
