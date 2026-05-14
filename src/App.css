@@ -139,4 +139,47 @@
   }
 }
 
+.btn-menu {
+  width: 30px;
+  height: 30px;
+  border: none;
+  display: none; 
+  cursor: pointer;
+}
+
+.delete-menu {
+  display: flex;
+  
+  border: none;
+
+}
+
+@media  (max-width: 768px) {
+  .btn-menu {
+    display: flex;
+  }
+}
+
+@media   (max-width: 768px) {
+  .left-side {
+    display: none;
+  }
+}
+@media   (max-width: 480px) {
+  .left-side {
+    display: none;
+  }
+}
+
+.app.menu-open .left-side {
+    display: block;
+  }
+
+  @media (min-width: 769px) {
+    .delete-menu {
+      display: none;
+    }
+  }
+
+
 

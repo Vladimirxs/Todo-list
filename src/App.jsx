@@ -3,14 +3,27 @@ import './App.css'
 
 
 function App() {
+  const [OpenMenu, setOpenMenu] = useState(false);
+
+  function toggleMenu()  {
+    setOpenMenu(!OpenMenu);
+  };
+
+
   return (
-    <div className='app'>
-      
-      <div className='left-side'>
+    <div className={`app ${OpenMenu ? 'menu-open' : ''}`}>
+      <button className='btn-menu' onClick={toggleMenu}>☰</button>
+
+
+
+      <div className="left-side">
+        <button className='delete-menu' onClick={toggleMenu}>✕</button>
         <div className='menu'>
           <h1>Меню</h1>
           <input type="text" placeholder='Поиск' />
         </div>
+        
+      
 
         <div className='header'>
           <h3 className='title'>Задачи</h3>
@@ -50,7 +63,6 @@ function App() {
           <span>Добавить категорию</span>
         </div>
       </div>
-
       
       <div className='right-side'>
         <div className='message'>Задач пока нет</div>
