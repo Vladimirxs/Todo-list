@@ -5,6 +5,13 @@ import Modal from './assets/Modal';
 
 function App() {
   const [OpenMenu, setOpenMenu] = useState(false);
+  const [Category, setCategory] = useState([]); 
+
+  function addCategory(newCategory) {
+    setCategory([...Category, newCategory]);
+  }
+
+  
 
   function toggleMenu()  {
     setOpenMenu(!OpenMenu);
@@ -42,7 +49,15 @@ function App() {
 
         <div className='categories-section'>
           <h3 className="section-title">Категории</h3>
-          <Modal/>
+
+          {Category.map((category, index) => (
+            <div key={index} className='category-item'>
+                <span className='icon'>•</span>
+              <span>{category}</span>
+              </div>
+          ))}
+
+          <Modal onAddCategory={addCategory}/>
         </div>
         </div>
 
