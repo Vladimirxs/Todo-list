@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Modal from './assets/Modal';
+import Task from './assets/Task';
 
 
 function App() {
@@ -10,6 +11,8 @@ function App() {
   function addCategory(newCategory) {
     setCategory([...Category, newCategory]);
   }
+
+
 
   
 
@@ -61,13 +64,12 @@ function App() {
         </div>
         </div>
 
-          
+          <Task/>
        
       
-      <div className='right-side'>
-        <div className='message'>Задач пока нет</div>
+      
       </div>
-    </div>
+   
   );
 }
 
