@@ -5,23 +5,21 @@ import './Task.css';
 function Task() {
     const [select, setSelect] = useState('')
     const [inputValue, setInputValue] = useState('')
-    const [tasks, setTasks] = useState([])
+    const [tasks, setTasks] = useState([
+        {id: '', name: ''}
+    ])
 
-    function addMenu(newMenu) {
-        if (newMenu && newMenu.trim()) {  
-            const newTask = {             
-                id: Date.now(),           
-                name: newMenu             
-            }
-            setTasks([...tasks, newTask]) 
-            setInputValue('')             
-        }
+
+
+function addMenu(newMenu) {
+        setTasks([...tasks, newMenu])
+
     }
 
     function addBtn() {
         addMenu(inputValue)
     }
-   
+
 
 
 
@@ -38,12 +36,11 @@ function Task() {
     onChange={(e) => setInputValue(e.target.value)}
     />
 
-
-    {tasks.map((task) => (
-            <div key={task.id} className='category-menu'>
-              <span>{task.name}</span>
-              </div>
-          ))}
+{tasks.map((task) => (
+                <div key={task.id} className='category-menu'>
+                    <span>{task.name}</span>
+                </div>
+            ))}
     
     
             
