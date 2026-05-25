@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import './Modal.css';
 
+
+
 function Modal ({ onAddCategory }) {
 const [isOpen, setIsOpen] = useState(false);
  const [categoryName, setCategoryName] = useState('')
@@ -40,6 +42,7 @@ const modalContent = (
 <button onClick={openModal} className='add'>⊕</button>
 <span>Добавить категорию</span>
 {isOpen && modalContent}
+
     </div>
  )
 };

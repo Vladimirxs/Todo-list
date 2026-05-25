@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
-import Modal from './assets/Modal';
-import Task from './assets/Task';
+import Modal from './assets/components/Modal/Modal';
+import Task from './assets/components/Modal/Task/Task';
 
 
 function App() {
@@ -64,7 +64,7 @@ function App() {
         </div>
         </div>
 
-          <Task/>
+          <Task categories={Category}/>
        
       
       

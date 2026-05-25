@@ -1,0 +1,57 @@
+.right-side {
+display: flex;  
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+.side-menu {
+  display: flex;
+  flex-direction: row;
+  margin-top: -800px;
+  gap: 10px;
+  
+}
+
+
+.input {
+  border-radius: 10px;
+  border: none;
+  font-size: 15px;
+  color:black;
+
+}
+
+.select {
+  border: none;
+border-radius: 10px;
+  font-size: 15px;
+}
+
+
+.btn {
+border: none;
+border-radius: 10px;
+  font-size: 15px;
+  background-color: green;
+  color:aliceblue;
+}
+
+.tasks-list {
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+margin-right: 400px;
+}
+
+.category-menu {
+ font-size: 10px;
+
+}
+
+
+
+
+
