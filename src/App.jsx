@@ -52,11 +52,14 @@ function App() {
 
         <div className='categories-section'>
           <h3 className="section-title">Категории</h3>
+          
+
+
 
           {Category.map((category, index) => (
             <div key={index} className='category-item'>
                 <span className='icon'>•</span>
-              <span>{category}</span>
+              <span >{category}</span>
               </div>
           ))}
 

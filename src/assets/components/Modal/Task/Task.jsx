@@ -50,21 +50,16 @@ function Task({categories}) {
                     ))}
                 </select>
 
-               
-
-                
-
-
                 <button className="btn" onClick={addBtn} >Добавить задачу</button>
-
             </div>
+            
             <div className='tasks-menu'>
                 {tasks.map((task) => (
-                    <div key={task.id} className='category-menu'>
-                        <span>{task.name}</span>
+                    <div key={task.id} className='category-menu'>                        
+                        <span >{task.name}</span>
                     </div> 
                 ))}
-                </div>
+                 </div>
         </div>
 
     )

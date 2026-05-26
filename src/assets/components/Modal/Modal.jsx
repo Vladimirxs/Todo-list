@@ -18,7 +18,7 @@ function closeModal()  {
 
 
 function addModal() {
-    onAddCategory(categoryName);
+    onAddCategory(categoryName); 
     closeModal();
 }
 
