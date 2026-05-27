@@ -25,10 +25,7 @@ function Task({ categories }) {
 
     const handleKeyPress = (event) => {
         if (event.key === "Enter") {
-            const newTask = {
-                id: Date.now(),
-                name: inputValue,
-            };
+            addBtn();
             setTasks([...tasks, newTask])
             setInputValue('')
         };
