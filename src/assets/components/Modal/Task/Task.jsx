@@ -16,6 +16,7 @@ function Task({ categories }) {
         const newTask = {
             id: Date.now(),
             name: inputValue,
+            category: select,
         };
 
         setTasks([...tasks, newTask]);
@@ -31,7 +32,10 @@ function Task({ categories }) {
         };
     };
 
-
+   const tasksCategory = categories.reduce((acc, category) => {
+    acc[category] = tasks.filter(task => task.category === category);
+    return acc;
+   }, {})
 
 
 

@@ -16,12 +16,15 @@ function closeModal()  {
     setCategoryName('');
 }
 
-
 function addModal() {
     onAddCategory(categoryName); 
     closeModal();
 }
-
+const hadlekey = (event) => {
+    if (event.key === 'Enter') {
+        addModal()
+    }
+}
 
 const modalContent = (
     <div className='modal-overlay'>
@@ -29,6 +32,7 @@ const modalContent = (
             <input type="text"
               placeholder='Категория'
               className='input'
+              onKeyPress={hadlekey}
               value={categoryName}
               onChange={(e) => setCategoryName(e.target.value)}
               />
