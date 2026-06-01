@@ -84,6 +84,13 @@
   margin-top: 16px;
   opacity: 0.7;
 }
+.category-list {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+
 
 .icon {
   font-size: 18px;

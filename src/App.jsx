@@ -7,14 +7,11 @@ import Task from './assets/components/Modal/Task/Task';
 function App() {
   const [OpenMenu, setOpenMenu] = useState(false);
   const [Category, setCategory] = useState([]); 
+  const [tasks, setTasks] = useState([]);
 
   function addCategory(newCategory) {
     setCategory([...Category, newCategory]);
   }
-
-
-
-  
 
   function toggleMenu()  {
     setOpenMenu(!OpenMenu);
@@ -40,9 +37,20 @@ function App() {
           <h3 className='title'>Задачи</h3>
         </div>
 
-        <div className='category-list'>
-          <span className="icon">»</span>
-          <span>Входящие</span>
+        <div className='category-list'> 
+          <span>» Входящие</span>
+          {tasks.map((task) => (
+                    <div key={task.id} className='category-menu'>
+
+                        {task.name && (
+                            <span>
+                                <i>✅</i> {task.name}
+                            </span>
+
+                        )}
+
+                    </div>
+                ))}      
         </div>
 
         <div className='category-item'>
@@ -67,7 +75,12 @@ function App() {
         </div>
         </div>
 
-          <Task categories={Category}/>
+          <Task categories={Category}
+          categories={Category}
+          tasks={tasks}
+          setTasks={setTasks}
+
+          />
        
       
       

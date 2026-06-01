@@ -4,12 +4,10 @@ import './Task.css';
 
 
 
-function Task({ categories }) {
+function Task({ categories, tasks, setTasks }) {
     const [select, setSelect] = useState('')
     const [inputValue, setInputValue] = useState('')
-    const [tasks, setTasks] = useState([
-        { id: '', name: '' }
-    ])
+   
 
 
     function addBtn() {
@@ -27,8 +25,6 @@ function Task({ categories }) {
     const handleKeyPress = (event) => {
         if (event.key === "Enter") {
             addBtn();
-            setTasks([...tasks, newTask])
-            setInputValue('')
         };
     };
 
