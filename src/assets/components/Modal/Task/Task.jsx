@@ -4,7 +4,7 @@ import './Task.css';
 
 
 
-function Task({ categories, tasks, setTasks }) {
+function Task({ categories, tasks, setTasks, category }) {
     const [select, setSelect] = useState('')
     const [inputValue, setInputValue] = useState('')
    
@@ -19,7 +19,6 @@ function Task({ categories, tasks, setTasks }) {
 
         setTasks([...tasks, newTask]);
         setInputValue('');
-        console.log(newTask.id);
     }
 
     const handleKeyPress = (event) => {
@@ -27,11 +26,8 @@ function Task({ categories, tasks, setTasks }) {
             addBtn();
         };
     };
-
-   const tasksCategory = categories.reduce((acc, category) => {
-    acc[category] = tasks.filter(task => task.category === category);
-    return acc;
-   }, {})
+   
+    const filterTasks = tasks.filter(task => task.category === category);
 
 
 
@@ -59,11 +55,12 @@ function Task({ categories, tasks, setTasks }) {
                     ))}
                 </select>
 
-                <button className="btn" onClick={addBtn}  >Добавить </button>
+                <button className="btn" onClick={addBtn}>Добавить</button>
             </div>
             <h1>Задачи</h1>
-            <div className='tasks-menu'>
-                {tasks.map((task) => (
+            <div className='tasks-menu'> 
+                
+                {filterTasks.map((task) => (
                     <div key={task.id} className='category-menu'>
 
                         {task.name && (
@@ -72,7 +69,6 @@ function Task({ categories, tasks, setTasks }) {
                             </span>
 
                         )}
-
                     </div>
                 ))}
             </div>
