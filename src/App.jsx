@@ -9,13 +9,22 @@ function App() {
   const [Category, setCategory] = useState([]); 
   const [tasks, setTasks] = useState([]);
 
+  
+    
+
+
+    
+
   function addCategory(newCategory) {
     setCategory([...Category, newCategory]);
   }
 
+
   function toggleMenu()  {
     setOpenMenu(!OpenMenu);
   };
+
+    
 
 
   return (
@@ -39,19 +48,7 @@ function App() {
 
         <div className='category-list'> 
           <span>» Входящие</span>
-          {tasks.map((task) => (
-                    <div key={task.id} className='category-menu'>
-
-                        {task.name && (
-                            <span>
-                                <i>✅</i> {task.name}
-                            </span>
-
-                        )}
-
-                    </div>
-                ))}      
-        </div>
+          </div>
 
         <div className='category-item'>
           <span className='icon'>☰</span>
@@ -76,9 +73,10 @@ function App() {
         </div>
 
           <Task categories={Category}
-          categories={Category}
           tasks={tasks}
           setTasks={setTasks}
+          
+         
 
           />
        

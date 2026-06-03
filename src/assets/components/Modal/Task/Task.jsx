@@ -4,9 +4,10 @@ import './Task.css';
 
 
 
-function Task({ categories, tasks, setTasks, category }) {
+function Task({ categories, tasks, setTasks, category}) {
     const [select, setSelect] = useState('')
     const [inputValue, setInputValue] = useState('')
+    
    
 
 
@@ -19,6 +20,8 @@ function Task({ categories, tasks, setTasks, category }) {
 
         setTasks([...tasks, newTask]);
         setInputValue('');
+        
+        
     }
 
     const handleKeyPress = (event) => {
@@ -27,12 +30,16 @@ function Task({ categories, tasks, setTasks, category }) {
         };
     };
    
-    const filterTasks = tasks.filter(task => task.category === category);
+    
+   
+     const filterTasks = tasks.filter(task => task.category === category);
+    
+    
 
 
 
 
-    return (
+    return (       
         <div className='right-side'>
             <div className="side-menu">
                 <input type="text"
@@ -59,7 +66,6 @@ function Task({ categories, tasks, setTasks, category }) {
             </div>
             <h1>Задачи</h1>
             <div className='tasks-menu'> 
-                
                 {filterTasks.map((task) => (
                     <div key={task.id} className='category-menu'>
 
