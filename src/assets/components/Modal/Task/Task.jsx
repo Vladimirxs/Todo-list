@@ -4,18 +4,24 @@ import './Task.css';
 
 
 
-function Task({ categories, tasks, setTasks, category}) {
+function Task({ categories, tasks, setTasks}) {
     const [select, setSelect] = useState('')
     const [inputValue, setInputValue] = useState('')
+    const [selectCategory, setSelectCategory] = useState('')
     
    
+
+ const filterTasks = tasks.filter(task => task.category === selectCategory);
+console.log(tasks, categories, filterTasks);
+
+
 
 
     function addBtn() {
         const newTask = {
             id: Date.now(),
             name: inputValue,
-            category: select,
+            category: select, 
         };
 
         setTasks([...tasks, newTask]);
@@ -30,9 +36,9 @@ function Task({ categories, tasks, setTasks, category}) {
         };
     };
    
-    
    
-     const filterTasks = tasks.filter(task => task.category === category);
+   
+     
     
     
 
@@ -66,14 +72,14 @@ function Task({ categories, tasks, setTasks, category}) {
             </div>
             <h1>Задачи</h1>
             <div className='tasks-menu'> 
-                {filterTasks.map((task) => (
-                    <div key={task.id} className='category-menu'>
 
-                        {task.name && (
+                {filterTasks.map((task) => (
+                    <div key={task.id}  className='category-menu'>
+
+                        {task.name && selectCategory && (
                             <span>
                                 <i>✅</i> {task.name}
                             </span>
-
                         )}
                     </div>
                 ))}
