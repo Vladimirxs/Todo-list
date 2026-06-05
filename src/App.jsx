@@ -8,7 +8,7 @@ function App() {
   const [OpenMenu, setOpenMenu] = useState(false);
   const [Category, setCategory] = useState([]); 
   const [tasks, setTasks] = useState([]);
-
+  const [selectCategory, setSelectCategory] = useState('');
   
     
 
@@ -64,7 +64,7 @@ function App() {
           {Category.map((category, index) => (
             <div key={index} className='category-item'>
                 <span className='icon'>•</span>
-              <span >{category}</span>
+              <span onClick={() => setSelectCategory(category)}>{category}</span>
               </div>
           ))}
 
@@ -75,6 +75,8 @@ function App() {
           <Task categories={Category}
           tasks={tasks}
           setTasks={setTasks}
+          selectCategory={selectCategory}
+          setSelectCategory={setSelectCategory}
           
          
 

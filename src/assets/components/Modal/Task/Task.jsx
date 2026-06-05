@@ -4,14 +4,19 @@ import './Task.css';
 
 
 
-function Task({ categories, tasks, setTasks}) {
+function Task({ categories, tasks, setTasks, selectCategory, setSelectCategory}) {
     const [select, setSelect] = useState('')
     const [inputValue, setInputValue] = useState('')
-    const [selectCategory, setSelectCategory] = useState('')
     
-   
+    
+   const filterTasks = tasks.filter(task => task.category === selectCategory);
 
- const filterTasks = tasks.filter(task => task.category === selectCategory);
+if (selectCategory === 'входящие') {
+    tasks;
+} else {
+      const filterTasks = tasks.filter(task => task.category === selectCategory);
+}
+
 console.log(tasks, categories, filterTasks);
 
 
@@ -26,6 +31,7 @@ console.log(tasks, categories, filterTasks);
 
         setTasks([...tasks, newTask]);
         setInputValue('');
+        setSelect('');
         
         
     }
@@ -75,8 +81,9 @@ console.log(tasks, categories, filterTasks);
 
                 {filterTasks.map((task) => (
                     <div key={task.id}  className='category-menu'>
+                        {}
 
-                        {task.name && selectCategory && (
+                        {task.name &&  (
                             <span>
                                 <i>✅</i> {task.name}
                             </span>
