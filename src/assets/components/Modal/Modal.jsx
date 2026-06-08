@@ -43,7 +43,7 @@ const modalContent = (
 )
  return (
     <div>
-<button onClick={openModal} className='add'>⊕</button>
+<button style={{cursor: 'pointer'}} onClick={openModal} className='add'>➕</button>
 <span>Добавить категорию</span>
 {isOpen && modalContent}
 

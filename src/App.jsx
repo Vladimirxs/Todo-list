@@ -44,10 +44,11 @@ function App() {
 
         <div className='header'>
           <h3 className='title'>Задачи</h3>
+          <h2 style={{color:'green', fontSize: '18px'}}>Категория: {selectCategory === '' ? 'Входящие' : selectCategory}</h2>
         </div>
 
-        <div className='category-list'> 
-          <span>» Входящие</span>
+        <div className='category-list' > 
+          <span  style={{cursor: 'pointer'}} onClick={() => setSelectCategory('входящие')}>» Входящие</span>
           </div>
 
         <div className='category-item'>
@@ -56,13 +57,13 @@ function App() {
         </div>
 
         <div className='categories-section'>
-          <h3 className="section-title">Категории</h3>
+          <h3  className="section-title">Категории</h3>
           
 
 
 
           {Category.map((category, index) => (
-            <div key={index} className='category-item'>
+            <div key={index} style={{cursor: 'pointer'}} className='category-item'>
                 <span className='icon'>•</span>
               <span onClick={() => setSelectCategory(category)}>{category}</span>
               </div>
@@ -76,7 +77,7 @@ function App() {
           tasks={tasks}
           setTasks={setTasks}
           selectCategory={selectCategory}
-          setSelectCategory={setSelectCategory}
+         
           
          
 

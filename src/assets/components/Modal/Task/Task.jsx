@@ -4,17 +4,17 @@ import './Task.css';
 
 
 
-function Task({ categories, tasks, setTasks, selectCategory, setSelectCategory}) {
+function Task({ categories, tasks, setTasks, selectCategory}) {
     const [select, setSelect] = useState('')
     const [inputValue, setInputValue] = useState('')
     
     
-   const filterTasks = tasks.filter(task => task.category === selectCategory);
+   let filterTasks;
 
 if (selectCategory === 'входящие') {
-    tasks;
+    filterTasks = tasks;
 } else {
-      const filterTasks = tasks.filter(task => task.category === selectCategory);
+       filterTasks = tasks.filter(task => task.category === selectCategory);
 }
 
 console.log(tasks, categories, filterTasks);
