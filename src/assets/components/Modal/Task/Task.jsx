@@ -42,15 +42,6 @@ console.log(tasks, categories, filterTasks);
         };
     };
    
-   
-   
-     
-    
-    
-
-
-
-
     return (       
         <div className='right-side'>
             <div className="side-menu">
@@ -84,14 +75,16 @@ console.log(tasks, categories, filterTasks);
                         
 
                         {task.name &&  (
-                            <span>                               
+                            <div>                               
                                 <i>✅</i>  {task.name} 
-                            </span>
+                               
+                            </div>
                         )}
-                        <span style={{marginLeft: '1000px'}}>{selectCategory}</span>
-                         <hr />
-                    </div>
+    
+                        <div>{selectCategory}</div>                  
+                    </div> 
                 ))}
+               
             </div>
         </div>
 

@@ -22,12 +22,14 @@ flex-direction: column;
 align-items: flex-start;
 gap: 8px;
 width: 100%;
-max-width: 1200px;
 flex: 1 1 auto;
 }
 
 .category-menu {
-font-size: 15px;
+font-size: 20px;
+display: flex;
+justify-content: space-between;
+width: 100%;
 }
 
 .input {
@@ -47,18 +49,14 @@ border-radius: 10px;
 
 
 .btn {
-border: none;
-border-radius: 10px;
+  border: none;
+  border-radius: 10px;
   font-size: 15px;
   background: linear-gradient(to right, green, rgb(94, 58, 192));
   color: beige;
   cursor: pointer;
 }
 
-.category-menu {
-  font-size: 20px;
-   
-}
 
 
 
