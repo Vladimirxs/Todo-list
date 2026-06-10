@@ -22,7 +22,7 @@ flex-direction: column;
 align-items: flex-start;
 gap: 8px;
 width: 100%;
-max-width: 400px;
+max-width: 1200px;
 flex: 1 1 auto;
 }
 
@@ -55,6 +55,10 @@ border-radius: 10px;
   cursor: pointer;
 }
 
+.category-menu {
+  font-size: 20px;
+   
+}
 
 
 

@@ -81,13 +81,15 @@ console.log(tasks, categories, filterTasks);
 
                 {filterTasks.map((task) => (
                     <div key={task.id}  className='category-menu'>
-                        {}
+                        
 
                         {task.name &&  (
-                            <span>
-                                <i>✅</i> {task.name}
+                            <span>                               
+                                <i>✅</i>  {task.name} 
                             </span>
                         )}
+                        <span style={{marginLeft: '1000px'}}>{selectCategory}</span>
+                         <hr />
                     </div>
                 ))}
             </div>

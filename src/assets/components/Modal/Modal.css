@@ -27,7 +27,6 @@
 .add {
 border: none;
 background: transparent;
-
 }
 
 
@@ -40,12 +39,15 @@ cursor: pointer;
 .add-categoriy {
 border-radius: 12px;
 display: flex;
+align-items: center;
 margin-top: 10px;
 cursor: pointer;
 background-color: white;
 border: none;
+height: 25px;
 }
 
 .input {
     border-radius: 10px;
+    height: 25px;
 }
