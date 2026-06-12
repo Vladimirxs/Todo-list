@@ -9,17 +9,16 @@ function Task({ categories, tasks, setTasks, selectCategory}) {
     const [inputValue, setInputValue] = useState('')
     
     
-   let filterTasks;
-
-if (selectCategory === 'входящие') {
+ let filterTasks;
+if (selectCategory === 'выполненные') {
+    filterTasks = tasks.filter(task => task.completed === true);
+} 
+else if (selectCategory === 'входящие') {
     filterTasks = tasks;
-} else {
-       filterTasks = tasks.filter(task => task.category === selectCategory);
+} 
+else {
+    filterTasks = tasks.filter(task => task.category === selectCategory);
 }
-
-console.log(tasks, categories, filterTasks);
-
-
 
 
     function addBtn() {
@@ -27,14 +26,18 @@ console.log(tasks, categories, filterTasks);
             id: Date.now(),
             name: inputValue,
             category: select, 
+            completed: false, 
         };
 
         setTasks([...tasks, newTask]);
         setInputValue('');
-        setSelect('');
-        
-        
+        setSelect('');  
     }
+    const toggleTask = (id) => {
+        setTasks(tasks.map(task => 
+            task.id === id ? {...task, completed: !task.completed} : task
+        ));
+    };
 
     const handleKeyPress = (event) => {
         if (event.key === "Enter") {
@@ -69,11 +72,17 @@ console.log(tasks, categories, filterTasks);
             </div>
             <h1>Задачи</h1>
             <div className='tasks-menu'> 
-
+                
                 {filterTasks.map((task) => (
-                    <div key={task.id}  className='category-menu'>
+                    <div key={task.id}  className='category-menu'
+                        onClick={() => toggleTask(task.id)}
+                        style={{textDecoration: task.completed ? 'line-through' : 'none',
+              cursor: 'pointer',
+              padding: '8px'
+              }}
+              >
                         
-
+                        
                         {task.name &&  (
                             <div>                               
                                 <i>✅</i>  {task.name} 
@@ -85,6 +94,9 @@ console.log(tasks, categories, filterTasks);
                     </div> 
                 ))}
                
+
+
+
             </div>
         </div>
 

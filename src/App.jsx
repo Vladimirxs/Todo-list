@@ -10,7 +10,7 @@ function App() {
   const [tasks, setTasks] = useState([]);
   const [selectCategory, setSelectCategory] = useState('');
   
-    
+   
 
 
     
@@ -49,6 +49,11 @@ function App() {
 
         <div className='category-list' > 
           <span  style={{cursor: 'pointer'}} onClick={() => setSelectCategory('входящие')}>» Входящие</span>
+          </div>
+
+          <div className='category-task'>
+            <span>👍</span>
+            <span style={{cursor: 'pointer'}} onClick={() => setSelectCategory('выполненные')}>Выполненные</span>
           </div>
 
         <div className='category-item'>

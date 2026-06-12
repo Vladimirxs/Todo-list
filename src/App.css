@@ -71,11 +71,14 @@
 .category-item,
 .category-work,
 .category-personal,
+.category-task,
+.category-list, 
 .category-study,
 .category-plus {
   margin-bottom: 12px;
   display: flex;
-  align-items: center;
+ justify-content: flex-start;
+
   
 }
 
@@ -83,11 +86,7 @@
   margin-top: 16px;
   opacity: 0.7;
 }
-.category-list {
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;  
-}
+
 
 
 
