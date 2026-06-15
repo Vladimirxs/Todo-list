@@ -29,6 +29,8 @@ const hadlekey = (event) => {
 const modalContent = (
     <div className='modal-overlay'>
         <div className='modal-content'>
+            <h3 className='category'>Cоздать категорию</h3>
+            <div className='input-exit'>
             <input type="text"
               placeholder='Категория'
               className='input'
@@ -36,8 +38,12 @@ const modalContent = (
               value={categoryName}
               onChange={(e) => setCategoryName(e.target.value)}
               />
-            <button onClick={closeModal} className='Exit'>❌</button>
+              <button onClick={closeModal} className='Exit'>❌</button>
+            </div>
+            
             <button onClick={addModal} className='add-categoriy'>Добавить</button>
+            <button onClick={closeModal} className='Exit-add'>Отмена</button>            
+            
         </div>
     </div>
 )

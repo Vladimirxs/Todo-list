@@ -20,6 +20,7 @@ else {
     filterTasks = tasks.filter(task => task.category === selectCategory);
 }
 
+filterTasks = [...filterTasks].sort((a, b) => a.completed - b.completed);
 
     function addBtn() {
         const newTask = {
@@ -33,6 +34,7 @@ else {
         setInputValue('');
         setSelect('');  
     }
+    
     const toggleTask = (id) => {
         setTasks(tasks.map(task => 
             task.id === id ? {...task, completed: !task.completed} : task
@@ -44,6 +46,9 @@ else {
             addBtn();
         };
     };
+    const addDelete = (id) => {
+        setTasks(tasks.filter(task => task.id !== id));
+    }
    
     return (       
         <div className='right-side'>
@@ -83,13 +88,17 @@ else {
               >
                         
                         
-                        {task.name &&  (
-                            <div>                               
-                                <i>✅</i>  {task.name} 
-                               
+                        {task.name && (
+                            <div>
+                                <i onClick={(e) => {
+                                    e.stopPropagation();
+                                    addDelete(task.id);
+                                }}>🗑️</i>
+                                <i>✅</i>  {task.name}
+
                             </div>
                         )}
-    
+
                         <div>{selectCategory}</div>                  
                     </div> 
                 ))}

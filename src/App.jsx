@@ -44,16 +44,25 @@ function App() {
 
         <div className='header'>
           <h3 className='title'>Задачи</h3>
-          <h2 style={{color:'green', fontSize: '18px'}}>Категория: {selectCategory === '' ? 'Входящие' : selectCategory}</h2>
         </div>
 
         <div className='category-list' > 
-          <span  style={{cursor: 'pointer'}} onClick={() => setSelectCategory('входящие')}>» Входящие</span>
+          <span   onClick={() => setSelectCategory('входящие')}
+          style={{cursor: 'pointer', 
+            borderRadius: '8px',
+            backgroundColor: selectCategory === 'входящие' ? '#00b09b' : 'transparent',
+          }}
+            >» Входящие</span>
           </div>
 
           <div className='category-task'>
             <span>👍</span>
-            <span style={{cursor: 'pointer'}} onClick={() => setSelectCategory('выполненные')}>Выполненные</span>
+            <span  onClick={() => setSelectCategory('выполненные')}
+            style={{cursor: 'pointer',
+              borderRadius: '8px',
+            backgroundColor: selectCategory === 'выполненные' ? '#00b09b' : 'transparent',
+            }}
+              >Выполненные</span>
           </div>
 
         <div className='category-item'>
@@ -70,7 +79,13 @@ function App() {
           {Category.map((category, index) => (
             <div key={index} style={{cursor: 'pointer'}} className='category-item'>
                 <span className='icon'>•</span>
-              <span onClick={() => setSelectCategory(category)}>{category}</span>
+              <span onClick={() => setSelectCategory(category)}
+              style={{padding: '8px 12px',
+            cursor: 'pointer',
+            borderRadius: '8px',
+             backgroundColor: selectCategory === category ? '#00b09b' : 'transparent',
+              }}
+                >{category}</span>
               </div>
           ))}
 

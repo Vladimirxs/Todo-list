@@ -17,11 +17,14 @@
   background: white;
   padding: 24px;
   border-radius: 12px;
-  max-width: 330px;
+  width: 350px;
+  height: 150px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
   animation: modalFadeIn 0.3s ease;
   background: linear-gradient(135deg, #00b09b, #96c93d);
+
 }
+
 
 
 .add {
@@ -36,15 +39,23 @@ background: transparent;
 cursor: pointer;
 }
 
+.Exit-add {
+  cursor: pointer;
+  border-radius: 12px;
+  height: 35px;
+  border: none;
+  margin-left: 20px;
+
+
+}
+
 .add-categoriy {
 border-radius: 12px;
-display: flex;
-align-items: center;
 margin-top: 10px;
 cursor: pointer;
 background-color: white;
 border: none;
-height: 25px;
+height: 35px;
 }
 
 .input {
