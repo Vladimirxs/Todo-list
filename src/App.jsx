@@ -33,7 +33,7 @@ function App() {
           setSearchValue={setSearchValue}
           selectCategory={selectCategory}
           setSelectCategory={setSelectCategory}
-          Category={Category}
+          categories={Category}
           addCategory={addCategory}
           />
     

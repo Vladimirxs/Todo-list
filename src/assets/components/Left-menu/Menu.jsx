@@ -1,6 +1,9 @@
 import Modal from '../Modal/Modal';
+import Class from './Class';
 
-function Menu({ searchValue, setSearchValue, toggleMenu, selectCategory, setSelectCategory, Category, addCategory }) {
+
+
+function Menu({ searchValue, setSearchValue, toggleMenu, selectCategory, setSelectCategory, addCategory, categories }) {
     return (
         <div className="left-side">
             <button className='delete-menu' onClick={toggleMenu}>✕</button>
@@ -54,30 +57,16 @@ function Menu({ searchValue, setSearchValue, toggleMenu, selectCategory, setSele
                 <span>Сегодня</span>
             </div>
 
-            <div className='categories-section'>
-                <h3 className="section-title">Категории</h3>
+            <Class
+            Category={categories}
+            selectCategory={selectCategory}
+            setSelectCategory={setSelectCategory}
+            />
 
-                {Category.map((category, index) => (
-                    <div key={index} className='category-item'>
-                        <span className='icon'>•</span>
-                        <span
-                            onClick={() => setSelectCategory(category)}
-                            style={{
-                                padding: '8px 12px',
-                                cursor: 'pointer',
-                                borderRadius: '8px',
-                                backgroundColor: selectCategory === category ? '#00b09b' : 'transparent',
-                                color: selectCategory === category ? 'white' : 'black',
-                            }}
-                        >
-                            {category}
-                        </span>
-                    </div>
-                ))}
-                <Modal onAddCategory={addCategory} />
+            <Modal onAddCategory={addCategory} />
 
-            </div>
         </div>
+       
     );
 }
 
