@@ -4,7 +4,7 @@ import './Task.css';
 
 
 
-function Task({ categories, tasks, setTasks, selectCategory}) {
+function Task({ categories, tasks, setTasks, selectCategory, searchValue}) {
     const [select, setSelect] = useState('')
     const [inputValue, setInputValue] = useState('')
     
@@ -18,6 +18,11 @@ else if (selectCategory === 'входящие') {
 } 
 else {
     filterTasks = tasks.filter(task => task.category === selectCategory);
+}
+ if (searchValue.trim() !== '') {
+    filterTasks = filterTasks.filter(task => 
+        task.name && task.name.toLowerCase().includes(searchValue.toLowerCase())
+    );
 }
 
 filterTasks = [...filterTasks].sort((a, b) => a.completed - b.completed);
